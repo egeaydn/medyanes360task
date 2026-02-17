@@ -61,11 +61,11 @@ export default function TodoPage() {
           {isLoading ? (
             <div className="flex flex-col items-center justify-center h-48 space-y-4">
               <div className="w-8 h-8 border-4 border-blue-200 border-t-blue-600 rounded-full animate-spin"></div>
-              <p className="text-gray-500 font-medium">Yükleniyor...</p>
+              <p className="text-gray-500 font-medium">Yükleniyor</p>
             </div>
           ) : todos.length === 0 ? (
             <div className="flex flex-col items-center justify-center h-48 text-center space-y-4">
-              <p className="text-gray-400">Henüz bir görev yok.</p>
+              <p className="text-gray-400">Henüz bir görev yok</p>
             </div>
           ) : (
             <div className="space-y-2">

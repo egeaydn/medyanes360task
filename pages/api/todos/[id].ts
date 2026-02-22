@@ -2,13 +2,12 @@ import { NextApiRequest, NextApiResponse } from 'next'
 import { prisma } from '@/lib/prisma'
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-  const { id } = req.query // URL'deki id'yi alır
+  const { id } = req.query 
 
   if (typeof id !== 'string') {
     return res.status(400).json({ error: 'Geçersiz ID' })
   }
 
-  // PUT: Mevcut bir todoyu güncelle (örn: durumunu değiştir)
   if (req.method === 'PUT') {
     const { title, description, status } = req.body
     try {
@@ -22,7 +21,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     }
   }
 
-  // DELETE: Bir todoyu sil
   if (req.method === 'DELETE') {
     try {
       await prisma.todo.delete({
